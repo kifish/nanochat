@@ -12,7 +12,8 @@
 
 # Default intermediate artifacts directory is in ~/.cache/nanochat
 export OMP_NUM_THREADS=1
-export NANOCHAT_BASE_DIR="$HOME/.cache/nanochat"
+# export NANOCHAT_BASE_DIR="$HOME/.cache/nanochat"
+export NANOCHAT_BASE_DIR="/map-vepfs/huakai/resource/data/nanochat"
 mkdir -p $NANOCHAT_BASE_DIR
 
 # -----------------------------------------------------------------------------
@@ -36,7 +37,8 @@ source .venv/bin/activate
 #    `WANDB_RUN=d26 bash speedrun.sh`
 if [ -z "$WANDB_RUN" ]; then
     # by default use "dummy" : it's handled as a special case, skips logging to wandb
-    WANDB_RUN=dummy
+    # WANDB_RUN=dummy
+    WANDB_RUN=nanochat
 fi
 
 # -----------------------------------------------------------------------------
